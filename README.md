@@ -1,4 +1,4 @@
-githubpress
+GithubPress
 ===========
 
-githubpress
+A very easy-to-use blog for users .
