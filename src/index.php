@@ -27,11 +27,14 @@ function punny_autoload($class) {
 	global $libs;
 	if(isset($libs[$class])) {
 		require_once($libs[$class]);
-	} else {
-		require_once(SRC_ROOT . "model/$class.class.php");
 	}
 }
 
+function model_autoload($class) {
+	require_once(SRC_ROOT . "model/$class.class.php");
+}
+
 spl_autoload_register('punny_autoload');
+spl_autoload_register('model_autoload');
 
 new Punny();

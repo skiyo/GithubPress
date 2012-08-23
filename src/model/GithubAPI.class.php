@@ -7,8 +7,6 @@ class GithubAPI {
 	
 	const API_GET_UESR_REPOS = '/user/repos';
 	
-	
-	
 	protected $oauth_client;
 	
 	/**
