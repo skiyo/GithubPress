@@ -5,6 +5,10 @@ class GithubAPI {
 	
 	const API_GET_USER_INFO = '/user';
 	
+	const API_GET_UESR_REPOS = '/user/repos';
+	
+	
+	
 	protected $oauth_client;
 	
 	/**
@@ -59,6 +63,20 @@ class GithubAPI {
 				$access_token), true);
 	}
 	
+	public function getUserRepos($access_token) {
+		return json_decode($this->oauth_client->requestAPI(self::API_DOMAIN . self::API_GET_UESR_REPOS,
+				$access_token), true);
+	}
 	
+	public function createRepos($access_token, $name = GithubPressConfig::DEFAULT_GITHUB_PRESS_REPOST_NAME) {
+		$params = array(
+			'name' => $name,
+			'has_issues' => false,
+			'has_wiki'	=> false,
+			'has_downloads'	=> false,
+		);
+		return json_decode($this->oauth_client->requestAPI(self::API_DOMAIN . self::API_GET_UESR_REPOS,
+				$access_token, OAuth2Client::POST, $params), true);
+	}
 	
 }

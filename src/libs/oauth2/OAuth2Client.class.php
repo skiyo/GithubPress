@@ -98,10 +98,16 @@ class OAuth2Client {
 	}
 	
 	
-	public function requestAPI($url, $access_token, $method = self::GET, $data = null) {
-		$ret = $this->request($url, $method, 
-				"Authorization: token $access_token", $this->bulidHttpQuery($this->params));
+	public function requestAPI($url, $access_token, $method = self::GET, $data = array()) {
+		if ($method == self::POST) {
+			$data = json_encode($data);
+		} else {
+			$data = $this->bulidHttpQuery($data);
+		}
+		$ret = $this->request($url, $method,
+				"Authorization: token $access_token", $data);
 		if (empty($ret) || (!empty($ret['http_code']) && $ret['http_code'] != 200)) {
+			var_dump($ret);
 			throw new OAuth2Exception('curl error');
 		} else {
 			return $ret['content'];
