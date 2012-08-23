@@ -36,6 +36,9 @@ class Punny {
 		//页面报错
 		error_reporting(E_ALL);
 		
+		//session
+		session_start();
+		
 		//Router
 		new Controller();
 	}

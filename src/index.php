@@ -1,9 +1,7 @@
 <?php
 /**
  * GithubPress
- * Copyright (c) 2011 bai.lu
- *
- * 网站入口
+ * Copyright (c) 2012 GithubPress
  *
  * @author skiyo@me.com
  */
@@ -18,20 +16,22 @@ $libs = array(
 	'Database' => SRC_ROOT . 'punny/database/Database.class.php',
 	'DbMySQL' => SRC_ROOT . 'punny/database/DbMySQL.class.php',
 	'ControllerConfig' => SRC_ROOT . 'config/ControllerConfig.class.php',
-	'BailuConfig' => SRC_ROOT . 'config/BailuConfig.class.php',
+	'GithubPressConfig' => SRC_ROOT . 'config/GithubPressConfig.class.php',
 	'Smarty' => SRC_ROOT . 'libs/smarty/Smarty.class.php',
-	'AuthToken' => SRC_ROOT . 'libs/google/AuthToken.class.php',
-	'ShortURL' => SRC_ROOT . 'model/ShortURL.class.php',
+	'OAuth2Client' => SRC_ROOT . 'libs/oauth2/OAuth2Client.class.php',
+	'Markdown' => SRC_ROOT . 'libs/Markdown.class.php',
+	'Cookie' => SRC_ROOT . 'libs/Cookie.class.php',
 );
 
-function bailu_autoload($class) {
+function punny_autoload($class) {
 	global $libs;
 	if(isset($libs[$class])) {
 		require_once($libs[$class]);
+	} else {
+		require_once(SRC_ROOT . "model/$class.class.php");
 	}
 }
 
-spl_autoload_register('bailu_autoload');
+spl_autoload_register('punny_autoload');
 
-//开启网站进程
 new Punny();

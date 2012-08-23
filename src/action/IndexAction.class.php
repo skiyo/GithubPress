@@ -9,7 +9,8 @@
  */
 class IndexAction extends Action {
 	protected function execute() {
-		$smarty = Punny::getSmarty();
-		$smarty->display('index.tpl');
+		Cookie::set('test', '中文测试');
+		var_dump($_COOKIE);
+		echo Cookie::get('test');
 	}
 }
