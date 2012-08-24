@@ -66,7 +66,7 @@ class GithubAPI {
 				$access_token), true);
 	}
 	
-	public function createRepos($access_token, $name = GithubPressConfig::DEFAULT_GITHUB_PRESS_REPOST_NAME) {
+	public function createRepos($access_token, $name = GithubPressConfig::DEFAULT_GITHUB_PRESS_REPOS_NAME) {
 		$params = array(
 			'name' => $name,
 			'has_issues' => false,

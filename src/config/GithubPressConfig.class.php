@@ -31,5 +31,5 @@ class GithubPressConfig {
 	
 	const OAUTH2_ACCESS_TOKEN_URL = 'https://github.com/login/oauth/access_token';
 	
-	const DEFAULT_GITHUB_PRESS_REPOST_NAME = 'GithubPress';
+	const DEFAULT_GITHUB_PRESS_REPOS_NAME = 'GithubPress';
 }
