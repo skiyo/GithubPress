@@ -3,7 +3,7 @@
  * GithubPress
  * Copyright (c) 2011 bai.lu
  *
- * 404
+ * Git
  *
  * @author skiyo@me.com
  */

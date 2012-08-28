@@ -6,6 +6,8 @@ class GithubAPI {
 	const API_GET_USER_INFO = '/user';
 	
 	const API_GET_UESR_REPOS = '/user/repos';
+
+	const API_CREATE_REPO_KEY = '/repos/%s/%s/keys';
 	
 	protected $oauth_client;
 	
@@ -74,6 +76,16 @@ class GithubAPI {
 			'has_downloads'	=> false,
 		);
 		return json_decode($this->oauth_client->requestAPI(self::API_DOMAIN . self::API_GET_UESR_REPOS,
+				$access_token, OAuth2Client::POST, $params), true);
+	}
+
+	public function addKeyToRepo($access_token, $user, $repo, $key) {
+		$url = sprintf(self::API_CREATE_REPO_KEY, $user, $repo);
+		$params = array(
+			'title' => GithubPressConfig::DEFAULT_GITHUB_PRESS_REPOS_NAME,
+			'key'	=> $key,
+		);
+		return json_decode($this->oauth_client->requestAPI(self::API_DOMAIN . $url,
 				$access_token, OAuth2Client::POST, $params), true);
 	}
 	
