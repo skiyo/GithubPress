@@ -8,7 +8,7 @@
 class TestAction extends Action {
 	protected function execute() {
 		$api = GithubAPI::getInstance();
-		$content = $api->getEmails('ddede5aba68430f033646f6b8666c51d4483d896');
+		$content = $api->getUserInfo('ddede5aba68430f033646f6b8666c51d4483d896');
 		var_dump($content);
 	}
 }

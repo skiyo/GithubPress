@@ -21,6 +21,8 @@ $libs = array(
 	'OAuth2Client' => SRC_ROOT . 'libs/oauth2/OAuth2Client.class.php',
 	'Markdown' => SRC_ROOT . 'libs/Markdown.class.php',
 	'Cookie' => SRC_ROOT . 'libs/Cookie.class.php',
+	'FeedItem' => SRC_ROOT . 'libs/feed/FeedItem.class.php',
+	'FeedWriter' => SRC_ROOT . 'libs/feed/FeedWriter.class.php',
 );
 
 function punny_autoload($class) {
