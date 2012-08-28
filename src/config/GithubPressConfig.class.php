@@ -23,7 +23,7 @@ class GithubPressConfig {
 	
 	const OAUTH2_CLIENT_SECRET = '242d04160a60990f7c76aa58e2d15b791835b035';
 	
-	const OAUTH2_SCOPE = 'repo';
+	const OAUTH2_SCOPE = 'user,repo';
 	
 	const OAUTH2_REDIRECT_URI = 'http://gp.com/oauth2/callback';
 	

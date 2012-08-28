@@ -1,9 +1,9 @@
 <?php
 /**
  * GithubPress
- * Copyright (c) 2011 bai.lu
+ * Copyright (c) 2012 GithubPress
  *
- * 404
+ * SSHKey
  *
  * @author skiyo@me.com
  */
@@ -27,15 +27,15 @@ class SSHKey {
 		exec("echo #key for $username\n > " . self::SSH_KEY_CONFIG_FILE);
 		$tmp_command = sprintf(self::SSH_KEY_CONFIG_HOST, $username);
 		exec("echo $tmp_command > " . self::SSH_KEY_CONFIG_FILE);
-		exec("echo " . self::SSH_KEY_CONFIG_HOSTNAME " > " . self::SSH_KEY_CONFIG_FILE);
-		exec("echo " . self::SSH_KEY_CONFIG_USER " > " . self::SSH_KEY_CONFIG_FILE);
+		exec("echo " . self::SSH_KEY_CONFIG_HOSTNAME . " > " . self::SSH_KEY_CONFIG_FILE);
+		exec("echo " . self::SSH_KEY_CONFIG_USER . " > " . self::SSH_KEY_CONFIG_FILE);
 		$tmp_command = sprintf(self::SSH_KEY_CONFIG_ID_FILE, $username);
 		exec("echo $tmp_command > " . self::SSH_KEY_CONFIG_FILE);
 		//return file_get_contents(self::SSH_KEY_USERS_DIR . $username);
 	}
 
 	public static function getPubKey($uesrname) {
-		return file_get_contents(self::SSH_KEY_USERS_DIR . $username . ".pub");
+		return file_get_contents(self::SSH_KEY_USERS_DIR . $uesrname . ".pub");
 	}
 
 }

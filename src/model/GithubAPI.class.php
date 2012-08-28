@@ -1,4 +1,10 @@
 <?php
+/**
+ * GithubPress
+ * Copyright (c) 2012 GithubPress
+ *
+ * @author skiyo@me.com
+ */
 class GithubAPI {
 	
 	const API_DOMAIN = 'https://api.github.com';
@@ -6,6 +12,8 @@ class GithubAPI {
 	const API_GET_USER_INFO = '/user';
 	
 	const API_GET_UESR_REPOS = '/user/repos';
+	
+	const API_GET_USER_EMAILS = '/user/emails';
 
 	const API_CREATE_REPO_KEY = '/repos/%s/%s/keys';
 	
@@ -55,11 +63,16 @@ class GithubAPI {
 		);
 		$this->oauth_client->setParams($params);
 		$this->oauth_client->setAccessTokenUrl(GithubPressConfig::OAUTH2_ACCESS_TOKEN_URL);
-		var_dump($this->oauth_client->getAccessToken());
+		return $this->oauth_client->getAccessToken();
 	}
 	
 	public function getUserInfo($access_token) {
 		return json_decode($this->oauth_client->requestAPI(self::API_DOMAIN . self::API_GET_USER_INFO, 
+				$access_token), true);
+	}
+	
+	public function getEmails($access_token) {
+		return json_decode($this->oauth_client->requestAPI(self::API_DOMAIN . self::API_GET_USER_EMAILS,
 				$access_token), true);
 	}
 	
