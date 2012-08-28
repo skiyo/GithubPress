@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * GithubPress
+ * Copyright (c) 2012 GithubPress
+ *
+ * @author skiyo@me.com
+ */
 class Cookie {
 	
 	public static function set($key, $value, $expire = 0, $path = '/') {

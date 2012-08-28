@@ -1,9 +1,7 @@
 <?php
 /**
  * GithubPress
- * Copyright (c) 2011 bai.lu
- *
- * Git
+ * Copyright (c) 2012 GithubPress
  *
  * @author skiyo@me.com
  */

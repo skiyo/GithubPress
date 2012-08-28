@@ -1,12 +1,9 @@
 <?php
 /**
- * bai.lu
- * Copyright (c) 2011 bai.lu
+ * GithubPress
+ * Copyright (c) 2012 GithubPress
  *
- * 鎺у埗鍣ㄨ矾鐢遍厤缃�
- *
- * @author dongliqiang<jessica.dlq@gmail.com>
- * @version $Id: ControllerConfig.class.php 20 2011-01-13 09:33:04Z jessica.dlq $
+ * @author skiyo@me.com
  */
 Class ControllerConfig {
 	public static $router;

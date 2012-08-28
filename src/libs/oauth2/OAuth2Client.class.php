@@ -1,6 +1,11 @@
 <?php
+/**
+ * GithubPress
+ * Copyright (c) 2012 GithubPress
+ *
+ * @author skiyo@me.com
+ */
 require_once 'OAuth2Exception.class.php';
-
 class OAuth2Client {
 	
 	/**

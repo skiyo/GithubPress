@@ -17,7 +17,7 @@ class GithubPressConfig {
 
 	const DB_CHARSET = 'utf8';
 	
-	const COOKIE_ENCRYPT_KEY = 'githubpress^^%$#!%&*%$@';
+	const COOKIE_ENCRYPT_KEY = 'githubpress';
 	
 	const OAUTH2_CLIENT_ID = 'c6c990e5c3e6cb7a94b2';
 	
