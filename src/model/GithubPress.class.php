@@ -21,8 +21,14 @@ class GithubPress {
 	public function login($access_token) {
 		$api = GithubAPI::getInstance();
 		$user_info = $api->getUserInfo($access_token);
-		$email = $api->getEmails($access_token);
-		//Cookie::set('gpu', $user_info['']);
+		$user = new User();
+		$is_registed = $user->getUserByGid($user_info['id']);
+		if ($is_registed) {
+			Cookie::set('gpu', $user_info['id']);
+		} else {
+			throw new Exception("");
+		}
+		//$email = $api->getEmails($access_token);
 	}
 	
 	

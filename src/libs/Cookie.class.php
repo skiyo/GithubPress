@@ -43,7 +43,7 @@ class Cookie {
 		return str_replace('=', '', base64_encode($result));
 	}
 	
-	protected function decrypt($string) {
+	protected static function decrypt($string) {
 		$key = md5(GithubPressConfig::COOKIE_ENCRYPT_KEY);
 		$key_length = strlen($key);
 		$string = base64_decode($string);
